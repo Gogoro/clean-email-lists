@@ -54,7 +54,7 @@ async function main() {
       for (const row of jsonArray) {
         for (const key in row) {
           if (isEmailValid(row[key])) {
-            emailsToRemove.push(row[key])
+            emailsToRemove.push(row[key].toLowerCase())
             ++emailsInDocument
           }
         }
@@ -98,7 +98,7 @@ async function main() {
 
         for (const key in row) {
           if (isEmailValid(row[key])) {
-            email = row[key]
+            email = row[key].toLowerCase()
           }
         }
 
